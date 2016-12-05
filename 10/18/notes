@@ -1,0 +1,40 @@
+Aim: C, the ultimate hipster, using # decades before it was cool
+
+#
+	Used to provide preprocessor instructions
+	
+	These directives are handled before the compiler really kicks in
+	
+	#include <LIBRARY> | "LIBRARY"
+		link libraries to your code
+		
+	#define <NAME> <VALUE>
+		replace all occurrences of NAME with VALUE
+		
+		#define TRUE 1
+		
+		macros:
+			#define SQUARE(x) x * x
+			...
+			int y = SQUARE(9); ==> int y = 9 * 9;
+			
+	conditional statement:
+		#ifndef <IDENTIFIER>
+		<CODE>
+		#endif
+		
+		If the identifier has been defined, ignore all the code up until the endif statement.
+		
+		#include <time.h>
+		
+		#define TRUE 10
+		#define STR "hello\n"
+		
+		int main() {
+			int i = 0;
+			//srand(time(NULL));
+			sranddev();
+			for (; i < 5; i++)
+				printf("random: %d\n", rand());
+			return 0;
+		}

@@ -1,0 +1,12 @@
+Pointers - Now the fun really starts
+
+	Variables designed to store memory addresses (think references in java)
+
+	* is used to declare a variable as a pointer type
+		ex. int *p
+		    double *q
+		    char *r
+
+	& is used to get the address of a variable
+
+	adding to a pointer adds the number of bytes of the type

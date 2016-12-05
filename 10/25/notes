@@ -1,0 +1,60 @@
+DO NOT SUBMIT EXECUTABLE FILES
+
+INCLUDE A MAKEFILE FOR EVERY ASSIGNMENT
+
+DO NOT AUTOMATICALLY CALL RUN IN MAKE
+
+
+
+Aim: Read your writes!
+
+Do Now: Write a c program that creates a new file. Give the file read & write permissions to each permission area.
+
+Run ls -l to check the permissions.
+
+When you create a file, there are a set of permissions that are automatically shut off by the system. (File Permission Mask)
+
+umask - <sys/stat.h>
+
+	Set the file creation permission mask
+	
+	By default, created files are not given the exact permissions provided in the mode argument to open. Some permissions are automatically shut off.
+	
+	Umask is applied by using bitwise negation on the mask, then bitwide and-ing it to the mode
+	
+		new_permissions = ~mask & mode
+		
+					0		2		2
+		mask 	  000	  010	  010
+		
+		~mask	  111   101   101
+		mode    110   110   110
+		&		  110   110   100
+		
+read - <unistd.h>
+	Read in data from a file
+	
+	read( <FILE DESCRIPTOR>, <BUFFER>, <AMOUNT> )
+	
+	read( fd, buff, n )
+	
+	Read n bytes from the fd's file and put that data into buff
+	
+	Returns the number of bytes actually read. Returns -1 and sets errno if unsuccessful.
+	
+	BUFFER must be a pointer.
+	
+write - <unistd.h>
+	Write data to a file
+	
+	write( <FILE DESCRIPTOR>, <BUFFER>, <AMOUNT> )
+	
+	write( fd, buff, n )
+	
+	Write n bytes from buff into fd's file
+	
+	Returns the number of bytes actually written. Returns -1 and sets errno if unsuccessful.
+	
+	BUFFER must be a pointer.
+		
+		

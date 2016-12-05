@@ -1,0 +1,34 @@
+Aim: Structured Programming
+
+void *
+
+	The dynamic memory functions deal in arbitrary blocks of memory. There is no regular type associated with the block.
+
+	void * is considered to be a pointer to a 1 byte block of memory, so pointer arithmetic will be based on 1.
+
+	Whenever possible you should typecast void * values to the appropriate type.
+	
+	ex: int *ip;
+	ip = (int *)malloc( 5 * sizeof(int) );
+	Or ip = (int *)calloc( 5, sizeof(int) );
+
+Must release allocated memory afterwards.
+
+Struct
+	A collection of values in a single data type.
+
+	struct { int x; char a; } s;
+
+		Here, s is a variable of type struct { int x; char a; }
+	
+	struct foo { int x; char a; } s2; (prototype)
+	
+	struct foo s3;
+	s3.x = 12345;
+
+	struct foo { int x; char a; };
+	struct foo *s;
+	s = (struct foo *)malloc(sizeof(struct foo));
+	(*s).x = 12345;
+	printf("s->x: %d\n", s->x);
+	s->x is the same as (*s).x

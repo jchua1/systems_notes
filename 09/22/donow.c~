@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int addfive(int x) {
+  return x+5;
+}
+
+int main() {
+  return addfive(5);
+}

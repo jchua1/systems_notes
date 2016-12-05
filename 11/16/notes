@@ -1,0 +1,7 @@
+Aim: Time to make an executive decision
+
+execlp/execvp - <unistd.h>
+	- Run an executable file
+	- Replaces the calling process
+	- execlp takes command line arguments as a series of strings
+	- execvp takes command line arguments as an array of strings

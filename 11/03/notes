@@ -1,0 +1,23 @@
+Aim: Input? fgets about it!
+
+getcwd - <unistd.h>
+
+	Get the current working directory (cwd) of a program
+	
+	getcwd( <STRING BUFFER>, <SIZE> )
+		Copies the path to the cwd into buffer arguments (char *)
+		
+		Copies at most SIZE characters of the path
+		
+		Absolute path
+		
+		runs whichever folder is run in
+		
+	chdir - <unistd.h>
+	
+		Change the working directory of a program
+		
+		chdir( <PATH> )
+		Returns 0 if successful, -1(errno) if not
+		Based on perms
+		Keep track of file paths when using chdir

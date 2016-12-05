@@ -1,0 +1,45 @@
+Aim: What the fork?
+
+fork() - <unistd.h>
+	Creates a separate process based on the current one, the new process is called the child, the original is the parent.
+	
+	The child process is a duplicate of the parent process. All parts of the parent process are copied, including stack and heap memory, and the file table.
+	
+	Returns 0 to the child and the child's pid to the parent or -1 (errno).
+	
+	If a parent process ends before the child, the child's new parent pid is 1.
+	
+	int main() {
+	
+		int f;
+		
+		printf("hello I'm: %d\n", getpid());
+		
+		f = fork();
+		
+		if (f == 0)
+			printf("\tI'm a child: %d\n, parent: %d\n", getpid(), getppid());
+		else {
+			int status, r;
+			
+			r = wait(&status);
+			
+			printf("hello f: %d\n", f);
+			printf("wait returned: %d\tstatus: %d\n", r, status);
+		}
+		return 0;
+	}
+
+Aim: Wait for it...
+
+But what about threads you ask?
+
+	A quick note on threads: A thread is a separate executable entity similar to a child process, except a thread is not a standalone process.
+	
+	It does not have its own memory space, instead it shares its parent's memory.
+	
+wait - <unistd.h>
+
+	Stops a parent process from running until any child has provided status information to the parent via a signal. (usually the child has exited).
+	
+	Returns the pid of the child that exited, or -1 (errno)

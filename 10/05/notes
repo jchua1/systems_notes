@@ -1,0 +1,6 @@
+Aim: If these files won't behave, we'll have to separate them!
+
+- ? -> if what is before question mark is true, return thing before colon, return thing after otherwise
+- strcopy source to terminating null
+- gcc is designed to create a SINGLE executable file (different from javac)
+- gcc dwstring.c testdw.c -> combines the 2 files

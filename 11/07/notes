@@ -1,0 +1,43 @@
+Aim: Are your processes running? - Then you should go out and catch them!
+
+Processes
+	Every running program is a process. A process can create subprocesses, but these are no different from regular processes.
+	
+	A processor can handle 1 process per cycle (per core). "Multitasking" appears to happen because the processor switches between all the active processes quickly.
+	
+	pid
+		Every process has a unique identifier called the pid.
+		
+		pid is the init process
+		
+		Each entry in the /proc directory is a current pid
+		
+	getpid() - <unistd.h>
+		returns the current processs pid
+		
+	getppid() - <unistd.h>
+		returns the current process' parent pid
+		
+	Signals
+	
+		Limited way of sending information to a process.
+		
+		kill
+			Command line utility to send a signal to a process
+			
+			$ kill <PID>
+				Sends signal 15 (SIGTERM) to PID
+				
+			$ kill -<SIGNAL> <PID>
+				Sends SIGNAL to PID
+				
+		killall [-<SIGNAL>] <PROCESS>
+		
+			Sends SIGTERM (or SIGNAL if provided) to all processes with PROCESS as the name
+			
+	Signal handling in c programs <signal.h>
+	
+		kill
+			kill(<PID>, <SIGNAL>)
+			
+			Returns 0 on success or -1 (errno) on failure.

@@ -1,0 +1,37 @@
+Aim: File this under useful information.
+
+Do Now: What are the different kinds of file permissions?
+
+File Permissions
+	3 types of permissions
+		read, write, execute (r, w, x)
+		
+	Permissions can be represented as 3-digit binary #s, or 1-digit octal #s
+	
+		100 <==> 4 => read only
+		111 <==> 7 => read, write, execute
+		
+	There are 3 permission "areas"
+		user, group, others
+		
+		each area can have its own permissions:
+		
+		644 => user: read + write, group: read, other: read
+		
+		deleting a file uses permissions of the directory
+		changing into a directory = executing a directory
+		using ls in a directory = reading a directory
+		
+File Table
+	A list of all files used by a program while it is running.
+	
+	Contains basic information like the file's location and size.
+	
+	The file table has a limited size, which is a power of 2 and commonly 256. getdtablesize() will return this value.
+	
+	Each file is given an integer index, starting at 0, this is referred to as the file descriptor.
+	
+	There are 3 files always open in the table:
+		0 or STDIN_FILENO: stdin
+		1 or STDOUT_FILENO: stdout
+		2 or STDERR_FILENO: stderr

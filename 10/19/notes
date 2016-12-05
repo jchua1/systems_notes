@@ -1,0 +1,56 @@
+Aim: A bit of wisdom
+
+Do Now: >> and << are binary operators, test them out with small integers and see if you can figure out what they do.
+
+>> and << are bit shift operators
+>> RIGHT SHIFT
+<< LEFT SHIFT
+
+101 (5) >> 1 ---> 010 (2)
+101 (5) >> 2 ---> 001 (1)
+101 (5) >> 3 ---> 000 (0)
+
+101 (5) << 1 ---> 1010 (10)
+101 (5) << 2 ---> 10100 (20)
+101 (5) << 3 ---> 101000 (
+
+Bitwise Operators
+	Work on each individual bit of a value.
+	
+	>> right shift
+		ex: x >> 1
+		
+		Move all bits to the right
+		
+	<< left shift
+		ex: x << 2
+		
+		Move all bits to the left, add 0s in the back
+		
+	Left shift and right shift will not overflow end bits into adjacent memory.
+	
+	~negation
+		ex: ~x
+		
+			Flip every bit.
+			~00101 ---> 11010 
+			
+	| or
+		ex: a | b
+		
+			Perform or for each pair of bits in (a, b)
+			10110 | 00101 
+			
+	& and
+		ex: a & b
+		
+			Perform and for each pair of bits in (a, b)
+			
+	^ xor
+		ex: a ^ b
+			Perform xor for each pair of bits in (a, b)
+			
+xor swap:
+	1) a = a ^ b;
+	2) b = a ^ b;
+	3) a = a ^ b;

@@ -1,0 +1,10 @@
+Aim: malloc & free: The dynamic duo!
+
+Separate compilation
+
+	 You can combine multiple c files into a c program by including them all in one gcc command.
+	     ex
+		gcc test.c string.c foo.c woohoo.c
+
+You cannot have duplicate function or global variable names across these files.
+
