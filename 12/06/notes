@@ -1,0 +1,79 @@
+Aim: What's a semaphore? - To control resources!
+
+Semaphore code
+	semctl - <sys/types.h> <sys/ipc.h> <sys/sem.h>
+		
+		Control the semaphore, including:
+		
+			Set the semaphore value
+			Remove the semaphore
+			Get the current value
+			Get information about the semaphore
+			
+		These operations are not atomic.
+		
+		semctl(<DESCRIPTOR>, <INDEX>, <OPERATION>, <DATA>)
+		
+			DESCRIPTOR
+				The return value of semget
+				
+			INDEX
+				The index of the semaphore you want to control in the semaphore set identified by the descriptor.
+				
+				For a single semaphore set, 0.
+				
+			OPERATION
+				One of the following constants (there are others as well)
+				
+				IPC_RMID: Remove the semaphore
+				
+				SETVAL: Set the value (requires DATA)
+				
+				SETALL: Set the value of every semaphore in the set. (requires DATA)
+				
+				GETVAL: Return the value
+				
+				IPC_STAT: Populate buffer with information about the semaphore. (requires DATA)
+				
+	semop
+	
+		Perform semaphore operations (like up/down)
+		
+		All operations performed via semop are atomic.
+		
+		semop(<DESCRIPTOR>, <OPERATION>, <AMOUNT>)
+		
+			DESCRIPTOR
+				The return value of semget
+				
+			AMOUNT
+				The amount of semaphores you want to operate on in the semaphore set.
+				
+				For a single semaphore set, 1.
+				
+			OPERATION
+				A pointer to a struct sembuf value
+				
+				struct sembuf {
+					short sem_op;
+					short sem_num;
+					short sem_flag;
+				};
+				
+				sem_num
+					The index of the semaphore you want to work on.
+					
+				sem_op
+					-1: Down(S)
+					1: Up(S)
+					
+					Any -/+ number will work, you will be requesting/releasing that value from the semaphore.
+					
+					0: Block until the semaphore reaches 0
+					
+				sem_flag
+					Provide further options
+					
+					SEM_UNDO: Allow the OS to undo the given operation. Useful in the event that a program exits before it could release a semaphore.
+					
+					IPC_NOWAIT: Instead of waiting for the semaphore to be available, return an error.
