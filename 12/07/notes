@@ -1,0 +1,11 @@
+Aim: What goes Up really should come down.
+
+Do Now: Write a semaphore control program like the one developed in class yesterday. It should be able to:
+
+				Create a semaphore and set an initial value
+				View the current value
+				Remove the semaphore
+				
+			The program behavior should be determined by a command line argument.
+			
+
