@@ -1,0 +1,25 @@
+Aim: A pipe by any other name...
+
+Named Pipes
+	Also known as FIFOs.
+	
+	Same as unnamed pipes except FIFOs have a name that can be used to idetnfiy them via different programs.
+	
+	Like unnamed pipes, FIFOs are unidirectional.
+	
+	mkfifo
+		Shell command to make a FIFO
+		
+		$ mkfifo <pipe name>
+		
+	mkfifo - <sys/types.h> <sys/stat.h>
+	
+		c function to create a FIFO
+		
+		Returns 0 on success and -1 on failure
+		
+		Once created, the FIFO acts like a regular file, and we can use open, read, write and close on it.
+		
+		mkfifo(<name>, <permissions>)
+		
+		FIFOs will block on open until both ends of the pipe have a connection.

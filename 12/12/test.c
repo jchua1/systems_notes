@@ -14,7 +14,7 @@ int main() {
     printf("[child] listening\n");
     close(fds[1]);
     char s[20];
-    read(fds[0], s, sizeof(s));
+    read(fds[0], s, Sizeof(s));
     printf("[child] got: %s\n", s);
   }
   else {
