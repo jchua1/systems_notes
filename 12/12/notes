@@ -24,4 +24,3 @@ Pipe
 		
 			descriptors
 				Array that will contain the descriptors for each end of the pipe.
-				
