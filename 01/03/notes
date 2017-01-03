@@ -1,0 +1,15 @@
+Aim: Cisco in an hour IV: A New Hope
+
+Network Layer
+	Transmission of data between two separate networks
+	
+	Is not concerned with whether or not data was sent successfully (connectionless).
+	
+	Major features of this layer are addressing, routing and packet forwarding.
+	
+	IP (internet protocol) addresses
+	
+		IPv4: 4 byte address
+			[0-255] . [0-255] . [0-255] . [0-255]
+			
+		Routing is made easier by having IP addresses distributed in blocks.
