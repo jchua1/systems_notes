@@ -1,0 +1,38 @@
+Aim: Cisco in an hour V for Vendetta
+
+Network Layer
+
+	Data is broken into packets (IPv4)
+	
+		<header info> <packet length> <fragment info> <time-to-live> <protocol> <header checksum> <source> <destination> <...> <data>
+		
+		      2B             2B              4B             1B           1B            2B             4B         4B        4B    20 - 65,535 B
+		      
+		      	header info: packet type (IPv4/6), header length...
+		      	
+		      	fragment info: full payloads may be broken up, this will have total # of fagments, which fragment...
+		      	
+		      	time-to-live: maximum # of hops before the packet dies
+		      	
+		      	protocol: TCP/UDP/...
+		      	
+		      	...: optional information depending on protocol, type etc
+		      
+		      IPv4 MTU is 65,535 B
+		      
+		      IPv6
+		      	Biggest difference is the address space goes from 2^32 --> 2^128
+		      	
+		      	Addresses are written as 8 groups of 4 hexadecimal digits
+		      		87ab: 301c : 73ab : 8731 : ff87 : abcd : dead : feed
+		      		
+		      		leading 0s are ignored, consecutive 0-groups can be replaced with ::, but only once in an address
+		      		
+		      	IPv4 address can be represented with 5 0-groups, 1 f-group (96 bits) followed by the regular IPv4 address (32 bits)
+		      	
+		      		:: ffff : 149.89.150.100
+		      		
+		      	Jumbograms
+		      		Inreases the MTU to ~4.3 billion (2^32)
+		      	
+		      	Other improvements in IPv6 make the protocol incompatible with IPv4.
