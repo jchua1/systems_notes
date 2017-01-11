@@ -1,0 +1,25 @@
+Aim: Get more power from your sockets
+
+Sockets in c
+	accept (server only) <sys/socket.h>
+	
+		returns the cosket descriptor of the new socket
+		
+		accept (<socket descriptor>, <socket address>, <address length>)
+		
+			socket descriptor: return value of socket
+			
+			address: pointer to a struct sockaddr
+						Will contain the correct address information after the connection is made
+						
+			length: pointer to a 
+			
+	connect (client only) <sys/socket.h> <sys/types.h>
+	
+		Connect to another program over a socket.
+		
+		Handles the client end of the 3 way handshake.
+		
+		connect(<socket descriptor>, <address>, <address size>)
+		
+			address struct is the same as in bind
